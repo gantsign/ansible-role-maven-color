@@ -1,6 +1,8 @@
 Ansible Role: Maven Color
 =====================
 
+[![Build Status](https://travis-ci.org/gantsign/ansible-role-maven-color.svg?branch=master)](https://travis-ci.org/gantsign/ansible-role-maven-color)
+
 Role to install the Maven Color extension for Maven
 (https://github.com/jcgay/maven-color).
 
