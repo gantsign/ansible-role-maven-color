@@ -1,7 +1,7 @@
 Ansible Role: Maven Color
 =====================
 
-Role to install the Maven Colour extension for Maven
+Role to install the Maven Color extension for Maven
 (https://github.com/jcgay/maven-color).
 
 Requirements
