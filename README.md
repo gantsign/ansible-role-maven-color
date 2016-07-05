@@ -1,5 +1,5 @@
 Ansible Role: Maven Color
-=====================
+=========================
 
 [![Build Status](https://travis-ci.org/gantsign/ansible-role-maven-color.svg?branch=master)](https://travis-ci.org/gantsign/ansible-role-maven-color)
 
@@ -29,24 +29,15 @@ maven_color_mirror: "http://dl.bintray.com/jcgay/maven/com/github/jcgay/maven/co
 
 # SHA256 sum for the redistributable package
 maven_color_redis_sha256sum: f5fd594d1cbeba136bc79dfb43a876c5fa49083f97e37fbec81df65dfc87a25b
+
+# path for Ansible to store downloaded files
+local_ansible_data_path: '/tmp/ansible/data'
 ```
 
 Note: if you install Maven using `groover.maven` role it will set the fact
 `ansible_local.maven.general.maven_home`, which this role uses as the default
 value for the Maven installation directory. If you install Maven without setting
 the fact you will have to specify `maven_color_maven_home`.
-
-Dependencies
-------------
-
-`silpion.util`
-
-Note: `silpion.util` must be imported as follows in your `requirements.yml`:
-
-```yaml
-- src: groover.util
-  name: silpion.util
-```
 
 Example Playbook
 ----------------

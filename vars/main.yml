@@ -1,5 +1,2 @@
-# path for ansible to store downloaded or templated data
-local_ansible_data_path: '/usr/local/src/ansible/data'
-
 # filename of Maven color redistributable package
 maven_color_redis_filename: "maven-color-logback-{{ maven_color_version }}-bundle.tar.gz"
