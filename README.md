@@ -47,7 +47,7 @@ If you install Maven using `groover.maven` this role can be used as follows:
 ```yaml
 - hosts: servers
   roles:
-     - { role: gantsign.maven_color }
+     - { role: gantsign.maven-color }
 ```
 
 If you install Maven using a different approach you'll need to specify the
@@ -56,7 +56,7 @@ Maven home:
 ```yaml
 - hosts: servers
   roles:
-     - { role: gantsign.maven_color, maven_color_maven_home: /opt/maven/apache-maven-3.3.9 }
+     - { role: gantsign.maven-color, maven_color_maven_home: /opt/maven/apache-maven-3.3.9 }
 ```
 
 License
