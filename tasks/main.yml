@@ -1,26 +1,22 @@
 ---
 - name: load version vars
-  tags: maven
   with_first_found:
     - ../vars/versions/{{ maven_color_version }}.yml
     - ../vars/versions/default.yml
   include_vars: "{{ item }}"
 
 - name: assert version vars
-  tags: maven
   assert:
     that:
       - maven_color_redis_sha256sum not in (None, "")
 
 - name: create local Ansible data directory
-  tags: maven
   file:
     state: directory
     mode: '0755'
     dest: "{{ local_ansible_data_path }}"
 
 - name: download Maven Color
-  tags: maven
   get_url:
     url: "{{ maven_color_mirror }}/{{ maven_color_redis_filename }}"
     dest: "{{ local_ansible_data_path }}/{{ maven_color_redis_filename }}"
@@ -31,7 +27,6 @@
     mode: '0644'
 
 - name: install Maven Color
-  tags: maven
   become: yes
   unarchive:
     src: "{{ local_ansible_data_path }}/{{ maven_color_redis_filename }}"
@@ -40,13 +35,11 @@
     creates: "{{ maven_color_maven_home }}/lib/ext/maven-color-core-{{ maven_color_version }}.jar"
 
 - name: list SLF4J Simple Logger JARs
-  tags: maven
   shell: "ls --width=1 {{ maven_color_maven_home }}/lib/slf4j-simple-*.jar"
   register: slf4j_jars
   ignore_errors: yes
 
 - name: remove SLF4J Simple Logger
-  tags: maven
   file:
     path: "{{ item }}"
     state: absent
