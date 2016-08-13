@@ -19,7 +19,7 @@ are shown below):
 
 ```yaml
 # Maven Color version number
-maven_color_version: 1.4.1
+maven_color_version: '1.6.0'
 
 # Location of the Maven installation to add the Maven Color extension to.
 maven_color_maven_home: "{{ ansible_local.maven.general.maven_home }}"
