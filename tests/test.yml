@@ -2,5 +2,7 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - gantsign.maven
+    - role: gantsign.maven
+      maven_version: '3.3.9'
+      maven_install_dir: /opt/maven
     - ansible-role-maven-color
