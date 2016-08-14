@@ -34,24 +34,8 @@ maven_color_redis_sha256sum: f5fd594d1cbeba136bc79dfb43a876c5fa49083f97e37fbec81
 local_ansible_data_path: '/tmp/ansible/data'
 ```
 
-Note: if you install Maven using `groover.maven` role it will set the fact
-`ansible_local.maven.general.maven_home`, which this role uses as the default
-value for the Maven installation directory. If you install Maven without setting
-the fact you will have to specify `maven_color_maven_home`.
-
 Example Playbook
 ----------------
-
-If you install Maven using `groover.maven` this role can be used as follows:
-
-```yaml
-- hosts: servers
-  roles:
-     - { role: gantsign.maven-color }
-```
-
-If you install Maven using a different approach you'll need to specify the
-Maven home:
 
 ```yaml
 - hosts: servers
