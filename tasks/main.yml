@@ -32,6 +32,9 @@
     src: "{{ local_ansible_data_path }}/{{ maven_color_redis_filename }}"
     dest: "{{ maven_color_maven_home }}"
     copy: false
+    owner: root
+    group: root
+    mode: 'go-w'
     creates: "{{ maven_color_maven_home }}/lib/ext/maven-color-core-{{ maven_color_version }}.jar"
 
 - name: list SLF4J Simple Logger JARs
@@ -40,6 +43,7 @@
   ignore_errors: yes
 
 - name: remove SLF4J Simple Logger
+  become: yes
   file:
     path: "{{ item }}"
     state: absent

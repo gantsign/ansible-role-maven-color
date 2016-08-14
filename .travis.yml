@@ -36,7 +36,7 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
 
   # Run the playbook with ansible-playbook
-  - sudo ansible-playbook tests/test.yml -i tests/inventory
+  - ansible-playbook tests/test.yml -i tests/inventory
 
   # Check Maven Color is installed
   # Since TravisCI comes with it's own mvn we have to explicitly run
