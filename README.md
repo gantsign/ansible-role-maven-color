@@ -22,7 +22,7 @@ are shown below):
 maven_color_version: '1.6.0'
 
 # Location of the Maven installation to add the Maven Color extension to.
-maven_color_maven_home: "{{ ansible_local.maven.general.maven_home }}"
+maven_color_maven_home: "{{ ansible_local.maven.general.home }}"
 
 # Mirror where to download Maven Color redistributable package from.
 maven_color_mirror: "http://dl.bintray.com/jcgay/maven/com/github/jcgay/maven/color/maven-color-logback/{{ maven_color_version }}"
