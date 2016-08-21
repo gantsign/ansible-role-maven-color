@@ -30,8 +30,8 @@ maven_color_mirror: "http://dl.bintray.com/jcgay/maven/com/github/jcgay/maven/co
 # SHA256 sum for the redistributable package
 maven_color_redis_sha256sum: f5fd594d1cbeba136bc79dfb43a876c5fa49083f97e37fbec81df65dfc87a25b
 
-# Path for Ansible to store downloaded files
-local_ansible_data_path: '/tmp/ansible/data'
+# Directory to store files downloaded for Maven Color installation
+maven_color_download_dir: "{{ x_ansible_download_dir | default('/tmp/ansible/data') }}"
 ```
 
 Example Playbook

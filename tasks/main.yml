@@ -10,16 +10,16 @@
     that:
       - "maven_color_redis_sha256sum not in (None, '')"
 
-- name: create local Ansible data directory
+- name: create download directory
   file:
     state: directory
     mode: 'u=rwx,go=rx'
-    dest: "{{ local_ansible_data_path }}"
+    dest: "{{ maven_color_download_dir }}"
 
 - name: download Maven Color
   get_url:
     url: "{{ maven_color_mirror }}/{{ maven_color_redis_filename }}"
-    dest: "{{ local_ansible_data_path }}/{{ maven_color_redis_filename }}"
+    dest: "{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}"
     sha256sum: "{{ maven_color_redis_sha256sum }}"
     force: false
     use_proxy: true
@@ -29,7 +29,7 @@
 - name: install Maven Color
   become: yes
   unarchive:
-    src: "{{ local_ansible_data_path }}/{{ maven_color_redis_filename }}"
+    src: "{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}"
     dest: "{{ maven_color_maven_home }}"
     copy: false
     owner: root
