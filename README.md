@@ -27,11 +27,29 @@ maven_color_maven_home: "{{ ansible_local.maven.general.maven_home }}"
 # Mirror where to download Maven Color redistributable package from.
 maven_color_mirror: "http://dl.bintray.com/jcgay/maven/com/github/jcgay/maven/color/maven-color-logback/{{ maven_color_version }}"
 
-# SHA256 sum for the redistributable package
-maven_color_redis_sha256sum: f5fd594d1cbeba136bc79dfb43a876c5fa49083f97e37fbec81df65dfc87a25b
-
 # Directory to store files downloaded for Maven Color installation
 maven_color_download_dir: "{{ x_ansible_download_dir | default('~/.ansible/tmp/downloads') }}"
+```
+
+### Supported Maven Color versions
+
+The following versions of Maven Color are supported without any additional
+configuration (for other versions follow the Advanced Configuration
+instructions):
+
+* `1.4.1`
+* `1.6.0`
+
+Advanced Configuration
+----------------------
+
+The following role variable is dependent on the Maven Color version; to use a
+Maven Color version **not pre-configured by this role** you must configure the
+variable below:
+
+```yaml
+# SHA256 sum for the redistributable package (i.e. maven-color-logback-{{ maven_color_version }}-bundle.tar.gz)
+maven_color_redis_sha256sum: f5fd594d1cbeba136bc79dfb43a876c5fa49083f97e37fbec81df65dfc87a25b
 ```
 
 Example Playbook
