@@ -21,9 +21,9 @@
     url: "{{ maven_color_mirror }}/{{ maven_color_redis_filename }}"
     dest: "{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}"
     sha256sum: "{{ maven_color_redis_sha256sum }}"
-    force: false
-    use_proxy: true
-    validate_certs: true
+    force: no
+    use_proxy: yes
+    validate_certs: yes
     mode: 'u=rw,go=r'
 
 - name: install Maven Color
@@ -31,7 +31,7 @@
   unarchive:
     src: "{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}"
     dest: "{{ maven_color_maven_home }}"
-    copy: false
+    copy: no
     owner: root
     group: root
     mode: 'go-w'
