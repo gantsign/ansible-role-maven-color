@@ -69,7 +69,7 @@ variable below:
 
 ```yaml
 # SHA256 sum for the redistributable package (i.e. maven-color-logback-{{ maven_color_version }}-bundle.tar.gz)
-maven_color_redis_sha256sum: f5fd594d1cbeba136bc79dfb43a876c5fa49083f97e37fbec81df65dfc87a25b
+maven_color_redis_sha256sum: 'f5fd594d1cbeba136bc79dfb43a876c5fa49083f97e37fbec81df65dfc87a25b'
 ```
 
 Example Playbook
