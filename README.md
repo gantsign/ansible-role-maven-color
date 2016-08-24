@@ -51,7 +51,7 @@ maven_color_mirror: "http://dl.bintray.com/jcgay/maven/com/github/jcgay/maven/co
 maven_color_download_dir: "{{ x_ansible_download_dir | default('~/.ansible/tmp/downloads') }}"
 ```
 
-### Supported Maven Color versions
+### Supported Maven Color Versions
 
 The following versions of Maven Color are supported without any additional
 configuration (for other versions follow the Advanced Configuration
