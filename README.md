@@ -10,8 +10,7 @@ Role to install the Maven Color extension for Maven
 Requirements
 ------------
 
-Requirements
-------------
+* Ansible >= 1.9
 
 * Ubuntu
 
@@ -28,10 +27,8 @@ Requirements
       not recommended.
 
     * **Recommendation:** use the
-      [gantsign.maven](https://galaxy.ansible.com/gantsign/maven/) role to
+      [gantsign.maven](https://galaxy.ansible.com/gantsign/maven) role to
       install Maven.
-
-* Ansible >= 1.9
 
 Role Variables
 --------------
