@@ -57,8 +57,8 @@ The following versions of Maven Color are supported without any additional
 configuration (for other versions follow the Advanced Configuration
 instructions):
 
-* `1.4.1`
 * `1.6.0`
+* `1.4.1`
 
 Advanced Configuration
 ----------------------
