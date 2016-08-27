@@ -3,6 +3,7 @@ Ansible Role: Maven Color
 
 [![Build Status](https://travis-ci.org/gantsign/ansible-role-maven-color.svg?branch=master)](https://travis-ci.org/gantsign/ansible-role-maven-color)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.maven--color-blue.svg)](https://galaxy.ansible.com/gantsign/maven-color)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible-role-maven-color/master/LICENSE)
 
 This role installs the [Maven Color](https://github.com/jcgay/maven-color)
 extension for Maven authored by
