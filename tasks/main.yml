@@ -38,19 +38,15 @@
     creates: "{{ maven_color_maven_home }}/lib/ext/maven-color-core-{{ maven_color_version }}.jar"
 
 - name: list SLF4J Simple Logger JARs
-  tags:
-    # False positive: [ANSIBLE0012] Commands should not change things if nothing needs doing
-    # This is necessary since the file module doesn't accept wildcards.
-    # False positive: [ANSIBLE0013] Use shell only when shell functionality is required
-    # See above.
-    - skip_ansible_lint
-  shell: "ls --width=1 {{ maven_color_maven_home }}/lib/slf4j-simple-*.jar"
+  find:
+    paths: '{{ maven_color_maven_home }}/lib'
+    patterns: 'slf4j-simple-*.jar'
   register: slf4j_jars
   ignore_errors: yes
 
 - name: remove SLF4J Simple Logger
   become: yes
   file:
-    path: "{{ item }}"
+    path: "{{ item.path }}"
     state: absent
-  with_items: "{{ slf4j_jars.stdout_lines }}"
+  with_items: "{{ slf4j_jars.files }}"
