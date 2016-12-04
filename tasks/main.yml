@@ -1,9 +1,9 @@
 ---
 - name: load version vars
   with_first_found:
-    - "../vars/versions/{{ maven_color_version }}.yml"
+    - '../vars/versions/{{ maven_color_version }}.yml'
     - ../vars/versions/default.yml
-  include_vars: "{{ item }}"
+  include_vars: '{{ item }}'
 
 - name: assert version vars
   assert:
@@ -14,13 +14,13 @@
   file:
     state: directory
     mode: 'u=rwx,go=rx'
-    dest: "{{ maven_color_download_dir }}"
+    dest: '{{ maven_color_download_dir }}'
 
 - name: download Maven Color
   get_url:
-    url: "{{ maven_color_mirror }}/{{ maven_color_redis_filename }}"
-    dest: "{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}"
-    sha256sum: "{{ maven_color_redis_sha256sum }}"
+    url: '{{ maven_color_mirror }}/{{ maven_color_redis_filename }}'
+    dest: '{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}'
+    sha256sum: '{{ maven_color_redis_sha256sum }}'
     force: no
     use_proxy: yes
     validate_certs: yes
@@ -29,13 +29,13 @@
 - name: install Maven Color
   become: yes
   unarchive:
-    src: "{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}"
-    dest: "{{ maven_color_maven_home }}"
+    src: '{{ maven_color_download_dir }}/{{ maven_color_redis_filename }}'
+    dest: '{{ maven_color_maven_home }}'
     copy: no
     owner: root
     group: root
     mode: 'go-w'
-    creates: "{{ maven_color_maven_home }}/lib/ext/maven-color-core-{{ maven_color_version }}.jar"
+    creates: '{{ maven_color_maven_home }}/lib/ext/maven-color-core-{{ maven_color_version }}.jar'
 
 - name: list SLF4J Simple Logger JARs
   find:
@@ -47,6 +47,6 @@
 - name: remove SLF4J Simple Logger
   become: yes
   file:
-    path: "{{ item.path }}"
+    path: '{{ item.path }}'
     state: absent
-  with_items: "{{ slf4j_jars.files }}"
+  with_items: '{{ slf4j_jars.files }}'
