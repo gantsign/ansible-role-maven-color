@@ -66,7 +66,7 @@ maven_color_maven_home: '{{ ansible_local.maven.general.home }}'
 maven_color_mirror: 'http://dl.bintray.com/jcgay/maven/com/github/jcgay/maven/color/maven-color-logback/{{ maven_color_version }}'
 
 # Directory to store files downloaded for Maven Color installation
-maven_color_download_dir: "{{ x_ansible_download_dir | default('~/.ansible/tmp/downloads') }}"
+maven_color_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
 ```
 
 ### Supported Maven Color Versions
