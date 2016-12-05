@@ -26,7 +26,7 @@
     validate_certs: yes
     mode: 'u=rw,go=r'
 
-- name: install unarchive module dependencies (dnf)
+- name: install unarchive module dependencies (dnf, zypper)
   become: yes
   package:
     name: '{{ item }}'
@@ -34,7 +34,7 @@
   with_items:
     - tar
     - unzip
-  when: ansible_pkg_mgr == 'dnf'
+  when: ansible_pkg_mgr in ('dnf', 'zypper')
 
 - name: install Maven Color
   become: yes
