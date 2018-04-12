@@ -12,7 +12,7 @@ extension for Maven authored by
 Requirements
 ------------
 
-* Ansible >= 2.0
+* Ansible >= 2.3
 
 * Linux Distribution
 
