@@ -1,2 +1,3 @@
+---
 # filename of Maven color redistributable package
 maven_color_redis_filename: 'maven-color-logback-{{ maven_color_version }}-bundle.tar.gz'
