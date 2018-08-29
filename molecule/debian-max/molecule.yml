@@ -9,7 +9,7 @@ lint:
   name: yamllint
 
 platforms:
-  - name: ansible-role-maven-color-debian-stretch
+  - name: ansible-role-maven-color-debian-max
     image: debian:9
 
 provisioner:
