@@ -9,6 +9,8 @@ This role installs the [Maven Color](https://github.com/jcgay/maven-color)
 extension for Maven authored by
 [Jean-Christophe Gay](https://github.com/jcgay).
 
+**Deprecation notice:** this role is no longer maintained, please upgrade to Maven >= 3.5 instead of using this role.
+
 Requirements
 ------------
 
